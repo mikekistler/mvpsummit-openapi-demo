@@ -71,6 +71,8 @@ app.MapGet("/weatherforecast",
 })
 .WithName("GetWeatherForecast");
 
+app.MapGet("/hello", (string name) => $"Hello {name}");
+
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
