@@ -1,6 +1,11 @@
-@openapi_demo_HostAddress = http://localhost:5147
+@HostAddress = http://localhost:5147
 
-GET {{openapi_demo_HostAddress}}/weatherforecast/
+GET {{HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+GET {{HostAddress}}/openapi/v1.yaml
 Accept: application/json
 
 ###
