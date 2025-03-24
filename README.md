@@ -13,5 +13,4 @@ Features already available in .NET Previews:
   - New "Description" parameter on [ProducesResponseType] attribute
 
 - Support for OpenAPI metadata in XML doc comments
-
-
+  - Finds XML doc comments in the same assembly and in any referenced projects

@@ -8,9 +8,14 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <!-- Capture XML doc comments for inclusion in the generated OpenAPI document -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- Might want to turn off no XML Doc comment warnings -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <OpenApiDocumentsDirectory>$(MSBuildProjectDirectory)</OpenApiDocumentsDirectory>
-    <!-- Configure build-time OpenAPI generation to produce an OpenAPI 3.0 document. -->
-    <!-- <OpenApiGenerateDocumentsOptions>openapi-version OpenApi3_0</OpenApiGenerateDocumentsOptions> -->
   </PropertyGroup>
 
   <ItemGroup>

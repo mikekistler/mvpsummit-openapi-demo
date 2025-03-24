@@ -1,4 +1,5 @@
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -40,6 +41,12 @@ builder.Services.AddOpenApi(options =>
     });
 });
 
+builder.Services.ConfigureHttpJsonOptions(options =>
+{
+    // Only read numbers from JSON numbers and always write numbers as JSON numbers (without quotes).
+    // options.SerializerOptions.NumberHandling = JsonNumberHandling.Strict;
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -71,7 +78,8 @@ app.MapGet("/weatherforecast",
 })
 .WithName("GetWeatherForecast");
 
-app.MapGet("/hello", (string name) => $"Hello {name}");
+// app.MapGet("/hello", (string name) => $"Hello {name}");
+app.MapGet("/hello", HelloApi.Hello);
 
 app.Run();
 
