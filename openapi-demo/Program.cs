@@ -80,13 +80,13 @@ app.MapGet("/weatherforecast",
 
 // app.MapGet("/hello", (string name) => $"Hello {name}");
 
+app.MapGet("/hello", HelloApi.Hello);
+
 app.MapGet("/howdy",
 /// <summary>
 /// Howdy API
 /// </summary>
 (string name) => $"Howdy {name}");
-
-app.MapGet("/hello", HelloApi.Hello);
 
 app.Run();
 
